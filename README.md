@@ -15,7 +15,13 @@ first:
 
 second: 
 > You will need to start up the mongodb server by running the mongod binary
-
+-------------------------------------
+> Example - windows
+> $ mongod.exe 
+------------------------------------
+> Example - macOS with brew
+> $ mongod
+--------------------------------------
 third:
 > $ node app.js
 
