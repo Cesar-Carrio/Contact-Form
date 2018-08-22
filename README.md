@@ -11,11 +11,17 @@ Simple Contact Us Form
 > The database is empty, there is no seed file needed.
 # Installation
 first:
-> npm install
+> $ npm install
 
 second: 
 > You will need to start up the mongodb server by running the mongod binary
-
+-------------------------------------
+> Example - windows
+> $ mongod.exe 
+------------------------------------
+> Example - macOS with brew
+> $ mongod
+--------------------------------------
 third:
-> node app.js
+> $ node app.js
 
