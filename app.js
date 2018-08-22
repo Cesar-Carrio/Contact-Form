@@ -13,12 +13,12 @@ mongoose.connect(
   { useNewUrlParser: true }
 );
 
-const Message = app.set("view engine", "pug");
+app.set("view engine", "pug"); //template engine - pug/jade
 app.use(express.static("public")); //serve custom style sheet
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(
-  expressSession({ secret: "max", saveUninitialized: false, resave: false })
+  expressSession({ secret: "max", saveUninitialized: false, resave: false }) // for sessions
 );
 const contactRoutes = require("./routes");
 const managerRoutes = require("./routes/manager");

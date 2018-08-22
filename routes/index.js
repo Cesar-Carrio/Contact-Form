@@ -5,6 +5,7 @@ const { sanitizeBody } = require("express-validator/filter");
 const nodemailer = require("nodemailer");
 const messageModel = require("../models/messages");
 
+// Email Account Credentials for throw away account
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -13,6 +14,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// INDEX Route
 router.get("/", (req, res) => {
   res.render("index", {
     success: req.session.success,
@@ -22,6 +24,7 @@ router.get("/", (req, res) => {
   req.session.success = null;
 });
 
+// Message Submission Route
 router.post(
   "/submit",
   [
@@ -42,7 +45,8 @@ router.post(
       .escape()
   ],
   (req, res) => {
-    // Finds the validation errors in this request and wraps them in an object with handy functions
+    // checking to see if any errors occured from
+    // validation or sanitizing
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       req.session.success = false;
@@ -51,6 +55,7 @@ router.post(
       req.session.success = true;
       req.session.errors = null;
 
+      //creating the message
       messageModel.create({
         name: req.body.name,
         email: req.body.email,
@@ -58,6 +63,7 @@ router.post(
         message: req.body.message
       });
 
+      // Email options
       var mailOptions = {
         from: "no.reply.hovercam@gmail.com",
         to: `${req.body.email}`,
@@ -65,6 +71,7 @@ router.post(
         html: "<h1>Message Recieved, we will contact you soon.</h1>"
       };
 
+      // sending email
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
           console.log(error);
