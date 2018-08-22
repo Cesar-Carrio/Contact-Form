@@ -3,7 +3,9 @@ Simple Contact Us Form
 
 # Pre-reqs
 > node.js must be installed
+-----------------------
 > npm must be installed
+--------------------------------
 > mongodb local enviroment must be set up
 
 # Installation
