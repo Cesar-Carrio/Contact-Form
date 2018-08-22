@@ -1,0 +1,6 @@
+extends includes/header.pug
+
+block main
+    .ui.main.text.container.segment
+        h1= `${error.message} - Status ${error.status}`
+        a(href='/') Go Home
