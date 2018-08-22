@@ -1,0 +1,32 @@
+{
+  "name": "contact-form",
+  "version": "1.0.0",
+  "description": "Simple contact us form with validation.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cesar-Carrio/Contact-Form.git"
+  },
+  "keywords": [
+    "forms",
+    "validation"
+  ],
+  "author": "Cesar J Carrillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cesar-Carrio/Contact-Form/issues"
+  },
+  "homepage": "https://github.com/Cesar-Carrio/Contact-Form#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.0",
+    "mongoose": "^5.2.9",
+    "nodemailer": "^4.6.8",
+    "pug": "^2.0.3"
+  }
+}

@@ -1,0 +1,31 @@
+extends includes/header.pug
+
+
+block main
+    .ui.main.text.container.segment
+        form.ui.form(action="/manager/namesearch", method="GET")
+            .field
+                label Search By Name:
+                input(type="text", name="name", placeholder="Search By Name...")
+            .item
+                button.ui.inverted.violet.button(type="submit") Search Names
+        form.ui.form(action="/manager/emailsearch", method="GET")
+            .field
+                label Search By Email:
+                input(type="text", name="email", placeholder="Search By Email...")
+            .item
+                button.ui.inverted.violet.button(type="submit") Search Emails
+        .ui.huge.header Messages Recieved
+        .ui.top.attached.segment.hidden
+            .ui.divided.items
+                each message in messages
+                    .item
+                        .content
+                            h1.header= `Title: ${message.title}`
+                            h1= message.name
+                            h2= message.email
+                            .meta
+                                span= message.created.toDateString()
+                            .description
+                                h4.header Message: 
+                                p= message.message

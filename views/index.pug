@@ -1,0 +1,26 @@
+extends includes/header.pug
+
+block main
+    .ui.main.text.container.segment.hidden
+        if errors
+            .ui.huge.header Invalid Submission -Try Again Please.
+                ul
+                    each error in errors
+                        li= error.msg
+        else
+            .ui.huge.header Contact Us
+            
+        form.ui.form(action="/submit", method="post")
+            .field
+                label Name:
+                input(type="text", name="name", placeholder="Enter Name")
+            .field
+                label Email:
+                input(type="email", name="email", placeholder="Enter Email", required)
+            .field
+                label Title:
+                input(type="text", name="title", placeholder="Enter Title")
+            .field
+                label Message:
+                textarea(name="message", cols="30", rows="10")
+            input.ui.inverted.violet.big.button(type='submit')
