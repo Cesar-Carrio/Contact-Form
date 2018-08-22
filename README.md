@@ -11,7 +11,7 @@ first:
 > npm install
 
 second: 
-You will need to start up the mongodb server by running the mongod binary
+> You will need to start up the mongodb server by running the mongod binary
 
 third:
 > node app.js
