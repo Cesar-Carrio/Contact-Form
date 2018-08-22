@@ -7,7 +7,8 @@ Simple Contact Us Form
 > npm must be installed
 --------------------------------
 > mongodb local enviroment must be set up
-
+-----------------------------
+> The database is empty, there is no seed file needed.
 # Installation
 first:
 > npm install
